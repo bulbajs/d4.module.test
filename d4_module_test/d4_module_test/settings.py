@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'd4_module_test.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db_test.sqlite3',
+        'NAME': BASE_DIR / 'test2_db.sqlite3',
     }
 }
 
