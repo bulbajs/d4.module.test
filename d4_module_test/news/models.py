@@ -49,10 +49,10 @@ class Post(models.Model):
         (news, 'Новость'),
     ]
 
-    postAuthor = models.ForeignKey(Author, on_delete=models.CASCADE)
-    categoryType = models.CharField(max_length=4, choices=PUBLICATION, default=news)
+    postAuthor = models.ForeignKey(Author, on_delete=models.CASCADE, db_column='postauthor_id')
+    categoryType = models.CharField(max_length=4, choices=PUBLICATION, default=news, db_column='categorytype')
     title = models.CharField(max_length=255)
-    time_in_Post = models.DateTimeField(auto_now_add=True)
+    time_in_Post = models.DateTimeField(auto_now_add=True, db_column='time_in_post')
     time_out = models.DateTimeField(null=True)
     postCategory = models.ManyToManyField(Category, through='PostCategory')
     text = models.TextField()
